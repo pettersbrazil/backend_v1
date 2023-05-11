@@ -1,10 +1,11 @@
 const jwt = require('jsonwebtoken');
+const configJWT = require('../config/jwt');
 const { promisify } = require('util');
 
 const User = require('../models/user');
 
 // const secret = process.env.JWT_SECRET;
-const secret = '$2a$08$iWLiM2o6GKPdXXwO!kjaKJK3Vus85oUGkrrcAOc04PzJuBGawO';
+const secret = configJWT.JWT_SECRET;
 
 module.exports = {
 
