@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const configJWT = require('../config/jwt');
 const mailer = require('../config/mail');
 
 const User = require('../models/user');
@@ -36,7 +37,7 @@ exports.login = async (req, res, next) => {
         }
 
         // const secret = process.env.JWT_SECRET;
-        const secret = '$2a$08$iWLiM2o6GKPdXXwO!kjaKJK3Vus85oUGkrrcAOc04PzJuBGawO';
+        const secret = configJWT.JWT_SECRET;
 
         const token = jwt.sign(
             {
