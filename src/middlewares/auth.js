@@ -3,7 +3,8 @@ const { promisify } = require('util');
 
 const User = require('../models/user');
 
-const secret = process.env.JWT_SECRET;
+// const secret = process.env.JWT_SECRET;
+const secret = '$2a$08$iWLiM2o6GKPdXXwO!kjaKJK3Vus85oUGkrrcAOc04PzJuBGawO';
 
 module.exports = {
 
