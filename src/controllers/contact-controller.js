@@ -4,8 +4,6 @@ const Contact = require('../models/contact');
 
 const mailer = require('../config/mail');
 
-// const TO_MAILER = process.env.TO_MAILER;
-// const FROM_MAILER = process.env.FROM_MAILER;
 const TO_MAILER = mailer.TO_MAILER;
 const FROM_MAILER = process.env.FROM_MAILER;
 
