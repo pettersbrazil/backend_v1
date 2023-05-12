@@ -8,7 +8,6 @@ const User = require('../models/user');
 const Profile = require('../models/profile');
 const PasswordReset = require('../models/password-reset');
 
-// const FROM_MAILER = process.env.FROM_MAILER;
 const FROM_MAILER = mailer.FROM_MAILER;
 
 exports.login = async (req, res, next) => {

@@ -1,7 +1,4 @@
 const Address = require('../models/address');
-const userController = require('./user-controller');
-
-const { admin } = require('../middlewares/auth');
 
 exports.post = async (req, res, next) => {
 

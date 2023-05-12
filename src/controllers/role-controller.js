@@ -1,7 +1,3 @@
-const bcrypt = require('bcryptjs');
-const userController = require('./user-controller');
-const { admin } = require('../middlewares/auth');
-
 const Role = require('../models/role');
 
 exports.post = async (req, res, next) => {

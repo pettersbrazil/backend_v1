@@ -1,5 +1,3 @@
-const { admin } = require('../middlewares/auth');
-
 const Profile = require('../models/profile');
 
 exports.post = async (req, res, next) => {
