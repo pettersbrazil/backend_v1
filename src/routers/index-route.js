@@ -13,10 +13,6 @@ const roleRoute = require('./role-route');
 const authRoute = require('./auth-route');
 const dashRoute = require('./dash-route');
 
-router.get('/', function(req, res, next) {
-    return res.send({ title: "Petter's Brazil" });
-});
-
 router.use('/addresses', addressRoute);
 router.use('/contact-us', contactUsRoute);
 router.use('/contacts', contactRoute);
