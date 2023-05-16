@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 const DB_USER = process.env.DB_USER || 'devpetters';

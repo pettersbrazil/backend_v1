@@ -4,7 +4,6 @@ const { promisify } = require('util');
 
 const User = require('../models/user');
 
-// const secret = process.env.JWT_SECRET;
 const secret = configJWT.JWT_SECRET;
 
 module.exports = {
