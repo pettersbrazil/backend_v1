@@ -52,10 +52,17 @@ exports.get = async (req, res, next) => {
     try {
         const pet = await Pet.findOne({ _id: id });
 
-        res.status(200).json({
-            success: true,
-            data: pet
-        })
+        if (pet) {
+            res.status(200).json({
+                success: true,
+                data: pet
+            })
+        } else {
+            res.status(404).json({
+                error: true,
+                message: 'O pet não foi encontrado! Por favor, tente novamente.'
+            })
+        }
     } catch (error) {
         res.status(500).json({
             error: true,
