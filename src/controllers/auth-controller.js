@@ -36,7 +36,6 @@ exports.login = async (req, res, next) => {
             return next();
         }
 
-        // const secret = process.env.JWT_SECRET;
         const secret = configJWT.JWT_SECRET;
 
         const token = jwt.sign(
