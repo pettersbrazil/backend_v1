@@ -101,10 +101,11 @@ exports.sendMail = async (req, res, next) => {
           data: body
       })
     })
-    .catch(() => {
+    .catch((error) => {
         res.status(500).json({
             error: true,
-            message: 'Aconteceu um erro no servidor, tente novamente mais tarde!'
+            message: 'Aconteceu um erro no servidor, tente novamente mais tarde!',
+            data: error
         });
     });
 };
