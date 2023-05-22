@@ -5,7 +5,7 @@ const Contact = require('../models/contact');
 const mailer = require('../config/mail');
 
 const TO_MAILER = mailer.TO_MAILER;
-const FROM_MAILER = process.env.FROM_MAILER;
+const FROM_MAILER = mailer.FROM_MAILER;
 
 exports.sendMail = async (req, res, next) => {
 
@@ -105,7 +105,9 @@ exports.sendMail = async (req, res, next) => {
         res.status(500).json({
             error: true,
             message: 'Aconteceu um erro no servidor, tente novamente mais tarde!',
-            data: error
+            data: {
+                error
+            }
         });
     });
 };
