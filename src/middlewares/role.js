@@ -4,7 +4,10 @@ const User = require('../models/user');
 module.exports = {
     role: async function (req, res, next) {
         try {
+            const id = req.params.id;
+            const body = req.body;
             const userId = req.userId;
+
             const userAdmin = await User.findOne({ _id: req.userId, role: 'admin' });
             const data = await Role.findOne({ userId });
 
@@ -14,10 +17,12 @@ module.exports = {
             const crud = roles[req.method];
 
             if (userAdmin && (!data || !data.roles[role][crud])) {
-                return res.status(403).json({
-                    error: true,
-                    message: 'Sem autorização para acessar o conteúdo!'
-                });
+                if (!(body.password && userId === id)) {
+                    return res.status(403).json({
+                        error: true,
+                        message: 'Sem autorização para acessar o conteúdo!'
+                    });
+                }
             }
             return next();
         } catch(error) {
