@@ -5,11 +5,12 @@ const Contact = require('../models/contact');
 const mailer = require('../config/mail');
 
 const TO_MAILER = mailer.TO_MAILER;
-const FROM_MAILER = process.env.FROM_MAILER;
+const FROM_MAILER = mailer.FROM_MAILER;
 
 exports.sendMail = async (req, res, next) => {
 
     const body = req.body;
+    const url = 'https://' + req.get('host');
 
     // send email
     mailer.transport.sendMail({
@@ -58,7 +59,7 @@ exports.sendMail = async (req, res, next) => {
             </head>
             <body>
                 <div class="image center">
-                    <img src="../assets/logo_greenwater.png" width="150px">
+                    <img src="${url}/assets/logo_greenwater.png" width="150px">
                 </div>
                 <table width="100%">
                     <thead>

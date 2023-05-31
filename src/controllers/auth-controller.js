@@ -117,6 +117,7 @@ exports.register = async (req, res, next) => {
 exports.recoverPassword = async (req, res, next) => {
 
     const body = req.body;
+    const url = 'https://' + req.get('host');
 
     try {
 
@@ -177,7 +178,7 @@ exports.recoverPassword = async (req, res, next) => {
                     </head>
                     <body>
                         <div class="image center">
-                            <img src="../assets/logo_greenwater.png" width="150px">
+                            <img src="${url}/assets/logo_greenwater.png" width="150px">
                         </div>
                         <table width="100%">
                             <thead>
