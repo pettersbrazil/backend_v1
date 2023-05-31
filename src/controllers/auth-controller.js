@@ -26,8 +26,8 @@ exports.login = async (req, res, next) => {
             return next();
         }
 
-        const checkPassword = true;
-
+        const checkPassword = await bcrypt.compare(body.password, user.password);
+        
         if (!checkPassword) {
             res.status(422).json({
                 error: true,
